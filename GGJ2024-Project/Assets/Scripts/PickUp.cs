@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
     float pickUpDistance = 2f;
-    Ray ray; 
+    Ray ray;
+    public LayerMask Pickable;
     public GameObject pickableObject ;
     public Transform virtualHand;
     public bool hasPickedObject = false;
@@ -14,9 +16,18 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
+        RaycastHit[] hits = Physics.RaycastAll(ray, pickUpDistance, Pickable);
         ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out hit , pickUpDistance) && Input.GetKeyDown(KeyCode.G) && !hasPickedObject)
+        
+            foreach (RaycastHit hit in hits)
+            {
+                
+                pickableObject = hit.collider.gameObject;
+
+                
+                Debug.Log("hezz object: " + pickableObject.name);
+            }
+            if (!hasPickedObject && Input.GetKey(KeyCode.G)) 
         {
             Pickup();
         }
