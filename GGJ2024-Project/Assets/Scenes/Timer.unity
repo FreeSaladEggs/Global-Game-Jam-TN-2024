@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7600ad566ad77a74e8dcf920782a4ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level1: Level 1
+  level1: level 1
   delayInSeconds: 3
   uiFill: {fileID: 1054648128}
   uiText: {fileID: 463444933}
