@@ -7,19 +7,9 @@ public class PickUp : MonoBehaviour
 {
     float pickUpDistance = 2f;
     Ray ray; 
-    Rigidbody rb;
     public GameObject pickableObject ;
     public Transform virtualHand;
     public bool hasPickedObject = false;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-        
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -33,14 +23,11 @@ public class PickUp : MonoBehaviour
     }
 
     private void Pickup()
-    {
+    {  
         pickableObject.GetComponent<Rigidbody>().isKinematic = true;
         hasPickedObject = true;
         pickableObject.transform.SetParent(virtualHand);
         pickableObject.transform.localPosition = Vector3.zero;
-
-
-
     }
    
 }
