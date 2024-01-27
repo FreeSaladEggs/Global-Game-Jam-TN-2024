@@ -10,6 +10,8 @@ public class Timer_control : MonoBehaviour
 {
     public string level1; // The name of the scene to reload
     public float delayInSeconds = 3f; // The delay before reloading the scene
+
+    public int actions ;
     
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -21,7 +23,7 @@ public class Timer_control : MonoBehaviour
 
     public int Duration;
 
-    private int remainingDuration;
+    public int remainingDuration;
 
     private bool Pause;
 
@@ -54,7 +56,6 @@ public class Timer_control : MonoBehaviour
 
     private void OnEnd()
     {
-        //End Time , if want Do something
         print("End");
         StartCoroutine(ReloadSceneAfterDelay());
     }

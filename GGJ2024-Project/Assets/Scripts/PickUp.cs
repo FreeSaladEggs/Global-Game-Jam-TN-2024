@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
             foreach (RaycastHit hit in hits)
             {
                 pickableObject = hit.collider.gameObject;
-                if (pickableObject.layer == 4)
+                if (pickableObject.layer == 6)
                 {
                     Debug.Log("hezz object: " + pickableObject.name);
                     Pickup();
