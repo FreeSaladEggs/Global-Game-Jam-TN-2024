@@ -37,7 +37,7 @@ public class PickUp : MonoBehaviour
     {
         pickableObject.GetComponent<Rigidbody>().isKinematic = false;
         pickableObject.transform.SetParent(null);
-        pickableObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10, ForceMode.Impulse);
+        pickableObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10, ForceMode.Acceleration);
         hasPickedObject = false;
 
     }
