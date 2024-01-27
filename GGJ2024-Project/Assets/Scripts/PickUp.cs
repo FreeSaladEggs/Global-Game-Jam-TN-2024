@@ -9,29 +9,29 @@ public class PickUp : MonoBehaviour
     float pickUpDistance = 2f;
     Ray ray;
     public LayerMask Pickable;
-    GameObject pickableObject ;
+    GameObject pickableObject;
     public Transform virtualHand;
     public bool hasPickedObject = false;
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit[] hits = Physics.RaycastAll(ray, pickUpDistance, Pickable);
         ray = new Ray(transform.position, transform.forward);
-        
-            
-            if (!hasPickedObject && Input.GetKey(KeyCode.G) && pickableObject.layer == 4) 
-            {
+        RaycastHit[] hits = Physics.RaycastAll(ray, pickUpDistance, Pickable);
+
+
+        if (!hasPickedObject && Input.GetKey(KeyCode.G))
+        {
             foreach (RaycastHit hit in hits)
             {
-
                 pickableObject = hit.collider.gameObject;
-
-
-                Debug.Log("hezz object: " + pickableObject.name);
+                if (pickableObject.layer == 4)
+                {
+                    Debug.Log("hezz object: " + pickableObject.name);
+                    Pickup();
+                }
             }
-            Pickup();
-            }
+        }
         if (hasPickedObject && (Input.GetKeyDown(KeyCode.V)))
         {
             Drop();
@@ -40,7 +40,7 @@ public class PickUp : MonoBehaviour
     }
 
     private void Pickup()
-    {  
+    {
         pickableObject.GetComponent<Rigidbody>().isKinematic = true;
         pickableObject.transform.SetParent(virtualHand);
         pickableObject.transform.localPosition = Vector3.zero;
@@ -55,6 +55,4 @@ public class PickUp : MonoBehaviour
         Debug.Log("Ytayech");
 
     }
-
-
 }
