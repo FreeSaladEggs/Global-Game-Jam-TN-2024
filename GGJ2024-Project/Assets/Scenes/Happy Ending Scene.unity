@@ -595,7 +595,8 @@ MonoBehaviour:
   textComponent: {fileID: 1709604504}
   lines:
   - Hello, testing, :)
-  textSpeed: 0.1
+  - Hate doing UI, but had to :(
+  textSpeed: 1.2
 --- !u!1 &1709604502
 GameObject:
   m_ObjectHideFlags: 0
