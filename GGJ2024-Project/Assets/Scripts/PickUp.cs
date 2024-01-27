@@ -19,18 +19,19 @@ public class PickUp : MonoBehaviour
         RaycastHit[] hits = Physics.RaycastAll(ray, pickUpDistance, Pickable);
         ray = new Ray(transform.position, transform.forward);
         
+            
+            if (!hasPickedObject && Input.GetKey(KeyCode.G) && pickableObject.layer == 4) 
+            {
             foreach (RaycastHit hit in hits)
             {
-                
+
                 pickableObject = hit.collider.gameObject;
 
-                
+
                 Debug.Log("hezz object: " + pickableObject.name);
             }
-            if (!hasPickedObject && Input.GetKey(KeyCode.G) && pickableObject.layer == 4) 
-        {
             Pickup();
-        }
+            }
         if (hasPickedObject && (Input.GetKeyDown(KeyCode.V)))
         {
             Drop();

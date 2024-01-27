@@ -525,9 +525,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7600ad566ad77a74e8dcf920782a4ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level1: Level 1
+  delayInSeconds: 3
   uiFill: {fileID: 1054648128}
   uiText: {fileID: 463444933}
-  Duration: 60
+  Duration: 5
 --- !u!1 &631161458
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,11 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bb7b277270894458149f6a796bd732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiFill: {fileID: 0}
-  uiText: {fileID: 0}
-  Duration: 0
-  remainingDuration: 0
-  Pause: 0
 --- !u!4 &1035302949
 Transform:
   m_ObjectHideFlags: 0
