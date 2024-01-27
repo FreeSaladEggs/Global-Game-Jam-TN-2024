@@ -9,7 +9,7 @@ public class PickUp : MonoBehaviour
     float pickUpDistance = 2f;
     Ray ray;
     public LayerMask Pickable;
-    public GameObject pickableObject ;
+    GameObject pickableObject ;
     public Transform virtualHand;
     public bool hasPickedObject = false;
 
