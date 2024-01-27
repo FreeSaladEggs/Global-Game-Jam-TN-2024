@@ -51,6 +51,7 @@ public class PickUp : MonoBehaviour
         pickableObject.transform.SetParent(null);
         pickableObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10, ForceMode.Acceleration);
         hasPickedObject = false;
+        Debug.Log("Ytayech");
 
     }
 
