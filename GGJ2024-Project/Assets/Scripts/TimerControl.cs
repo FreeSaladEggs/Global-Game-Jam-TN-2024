@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using TMPro ;
 using UnityEngine.SceneManagement;
 
-public class Timer_control : MonoBehaviour
+public class TimerControl : MonoBehaviour
 {
     public string level1; // The name of the scene to reload
     public float delayInSeconds = 3f; // The delay before reloading the scene

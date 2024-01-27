@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class AcceptingObject : MonoBehaviour
 {
+    public bool inPlace;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == 4)
         {
-            Debug.Log("gdsjk");
-            other.gameObject.layer = 0;      }
+            other.gameObject.layer = 0;
+            inPlace = true;  
+        }
     }
+
+   
 }
