@@ -139,6 +139,11 @@ PrefabInstance:
       propertyPath: pickableObject
       value: 
       objectReference: {fileID: 1766986033}
+    - target: {fileID: 2030248400049859452, guid: 26d333f5ce5eb324cafb621844150065,
+        type: 3}
+      propertyPath: Pickable.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4038784233422929521, guid: 26d333f5ce5eb324cafb621844150065,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1046,6 +1051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickableObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4870521805018807098, guid: ccefad6c3f7558947ad6411147b3ff66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4870521805018807098, guid: ccefad6c3f7558947ad6411147b3ff66,
         type: 3}

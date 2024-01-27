@@ -27,7 +27,7 @@ public class PickUp : MonoBehaviour
                 
                 Debug.Log("hezz object: " + pickableObject.name);
             }
-            if (!hasPickedObject && Input.GetKey(KeyCode.G)) 
+            if (!hasPickedObject && Input.GetKey(KeyCode.G) && pickableObject.layer == 4) 
         {
             Pickup();
         }

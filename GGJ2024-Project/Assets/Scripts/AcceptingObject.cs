@@ -6,9 +6,9 @@ public class AcceptingObject : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "PickableObj")
+        if(other.gameObject.layer == 4)
         {
-
-        }
+            Debug.Log("gdsjk");
+            other.gameObject.layer = 0;      }
     }
 }
