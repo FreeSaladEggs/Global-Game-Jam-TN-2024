@@ -20,14 +20,26 @@ public class PickUp : MonoBehaviour
         {
             Pickup();
         }
+        if ((hasPickedObject) && (Input.GetKey(KeyCode.D)))
+        {
+            Drop();
+        }
     }
 
     private void Pickup()
     {  
         pickableObject.GetComponent<Rigidbody>().isKinematic = true;
-        hasPickedObject = true;
         pickableObject.transform.SetParent(virtualHand);
         pickableObject.transform.localPosition = Vector3.zero;
+        hasPickedObject = true;
     }
-   
+    private void Drop()
+    {
+        pickableObject.GetComponent<Rigidbody>().isKinematic = false;
+        pickableObject.transform.SetParent(null);
+        pickableObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10, ForceMode.Impulse);
+        hasPickedObject = false;
+
+    }
+
 }
