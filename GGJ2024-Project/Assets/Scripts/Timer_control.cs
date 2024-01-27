@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro ;
-using UnityEngine.SceneManagement;
+
 public class Timer_control : MonoBehaviour
 {
-    public string level1; // The name of the scene to reload
-
-    public float delayInSeconds = 3f; // The delay before reloading the scene
-
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         Pause = !Pause;
@@ -56,12 +53,8 @@ public class Timer_control : MonoBehaviour
     {
         //End Time , if want Do something
         print("End");
-        StartCoroutine(ReloadSceneAfterDelay());
+        
     }
 
-    IEnumerator ReloadSceneAfterDelay()
-    {
-        yield return new WaitForSeconds(delayInSeconds);
-        SceneManager.LoadScene(level1);
-    }
+   
 }
