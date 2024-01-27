@@ -16,14 +16,15 @@ public class PickUp : MonoBehaviour
     {
         RaycastHit hit;
         ray = new Ray(transform.position, transform.forward);
-        if (Physics.Raycast(ray, out hit , pickUpDistance) && Input.GetKey(KeyCode.G) && (!hasPickedObject))
+        if (Physics.Raycast(ray, out hit , pickUpDistance) && Input.GetKeyDown(KeyCode.G) && !hasPickedObject)
         {
             Pickup();
         }
-        if ((hasPickedObject) && (Input.GetKey(KeyCode.D)))
+        if (hasPickedObject && (Input.GetKeyDown(KeyCode.V)))
         {
             Drop();
         }
+
     }
 
     private void Pickup()
@@ -41,5 +42,6 @@ public class PickUp : MonoBehaviour
         hasPickedObject = false;
 
     }
+
 
 }
