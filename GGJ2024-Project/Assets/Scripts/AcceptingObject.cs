@@ -7,12 +7,12 @@ public class AcceptingObject : MonoBehaviour
     //public int action = 0;
     
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.layer == 6)
+        if(collision.gameObject.layer == 6)
         {
             Debug.Log("in place");
-            other.gameObject.layer = 0;   
+            collision.gameObject.layer = 0;   
             GameManager.Instance.action++;  
         }
     }
