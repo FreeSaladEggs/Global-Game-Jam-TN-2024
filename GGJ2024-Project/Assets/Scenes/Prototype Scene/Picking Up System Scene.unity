@@ -540,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 2030248400049859452, guid: 26d333f5ce5eb324cafb621844150065,
         type: 3}
       propertyPath: Pickable.m_Bits
-      value: 16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4038784233422929521, guid: 26d333f5ce5eb324cafb621844150065,
         type: 3}
