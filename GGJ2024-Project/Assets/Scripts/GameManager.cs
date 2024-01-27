@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Timer_control Timer;
+    public TimerControl Timer;
     public AcceptingObject placed;
 
     public int action = 0;
