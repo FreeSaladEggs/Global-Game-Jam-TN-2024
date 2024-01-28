@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
     public AudioClip[] audioClips;
     public Sprite[] images;
     public string[] lines;
-    public float textSpeed = 0.3f;
+    public float textSpeed = 15f;
     private int index;
 
     void Start()
