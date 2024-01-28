@@ -1,29 +1,33 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using UnityEditor.Build;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public Image imageComponent;
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
+    public Sprite[] images;
     public string[] lines;
     public float textSpeed = 0.3f;
     private int index;
-    // Start is called before the first frame update
+
     void Start()
     {
         textComponent.text = string.Empty;
+        imageComponent.sprite = images[0];
         StartDialogue();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.anyKeyDown)
         {
             if (textComponent.text == lines[index])
             {
+                PlaySound();
                 NextLine();
             }
         }
@@ -34,27 +38,38 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue() {
+    void StartDialogue()
+    {
         index = 0;
         StartCoroutine(TypeLine());
-    
-    
     }
 
     IEnumerator TypeLine()
     {
-        foreach (char c  in lines[index].ToCharArray()) {
+        foreach (char c in lines[index].ToCharArray())
+        {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
     }
+
+    void PlaySound()
+    {
+        if (audioClips.Length > index)
+        {
+            audioSource.PlayOneShot(audioClips[index]);
+        }
+    }
+
     void NextLine()
     {
-        if (index < lines.Length-1) {
-        index++;
+        if (index < lines.Length - 1)
+        {
+            index++;
             textComponent.text += string.Empty;
+            imageComponent.sprite = images[index];
+            audioSource.Stop();
             StartCoroutine(TypeLine());
-        
         }
         else
         {
