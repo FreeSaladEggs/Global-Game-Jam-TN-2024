@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public int action = 0;
 
+    [SerializeField] private int TotalAction;
     public static GameManager Instance;
 
 

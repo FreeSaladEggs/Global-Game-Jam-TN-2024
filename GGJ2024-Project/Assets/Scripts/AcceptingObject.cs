@@ -9,11 +9,12 @@ public class AcceptingObject : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == 6)
+        if(collision.gameObject.layer == 6 && gameObject.tag == collision.gameObject.tag)
         {
-            Debug.Log("in place");
-            collision.gameObject.layer = 0;   
-            GameManager.Instance.action++;  
+            collision.gameObject.layer = 0;
+            GameManager.Instance.action++;
+            Debug.Log("in place " + "action :" + GameManager.Instance.action);
+
         }
     }
 
